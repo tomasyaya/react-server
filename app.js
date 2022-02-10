@@ -15,7 +15,6 @@ async function start() {
     sessionConfig(app);
     // routes
     authRouter(app);
-    projectRouter(app);
     taskRouter(app);
     filesRouter(app);
 
