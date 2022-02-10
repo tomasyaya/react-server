@@ -9,14 +9,14 @@ function sessionConfig(app) {
   app.use(
     session({
       secret: SESSION_SECRET,
-      resave: false,
+      resave: true,
       saveUninitialized: true,
       store: MongoStore.create({
         mongoUrl: MONGODB_URL,
       }),
       cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 365,
-        sameSite: false,
+        sameSite: "none",
         secure: NODE_ENV === "production",
       },
     })

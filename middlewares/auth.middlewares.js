@@ -2,6 +2,7 @@
 // if there is no user in the session, meaning no logged in user, then it will fail and
 // the request will not proceed.
 function isLoggedIn(req, res, next) {
+  console.log("req.session", req.session);
   const user = req.session.user;
   if (user) {
     return next();
