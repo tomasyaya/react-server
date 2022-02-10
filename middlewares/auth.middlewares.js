@@ -14,7 +14,7 @@ function isLoggedIn(req, res, next) {
 // this middleware will run before any anonymous controller
 // if there is a user in the session, meaning a logged in user, then it will fail and
 // the request will not proceed.
-function isNotLoggedIn(req, res) {
+function isNotLoggedIn(req, res, next) {
   const user = req.session.user;
   if (!user) {
     return next();
