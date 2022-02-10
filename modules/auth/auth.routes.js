@@ -19,11 +19,7 @@ function authRouter(app) {
     .post(ROUTES.signup, middlewares.isNotLoggedIn, controllers.signup)
     .post(ROUTES.login, middlewares.isNotLoggedIn, controllers.login)
     .post(ROUTES.logout, middlewares.isLoggedIn, controllers.logout)
-    .get(
-      ROUTES.isLoggedIn,
-      middlewares.isNotLoggedIn,
-      controllers.getLoggedInUser
-    );
+    .get(ROUTES.isLoggedIn, controllers.getLoggedInUser);
 
   app.use("/api", router);
 }
