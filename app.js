@@ -19,6 +19,10 @@ async function start() {
     taskRouter(app);
     filesRouter(app);
 
+    app.get("/", (req, res) => {
+      res.status(200).json({ message: "running" });
+    });
+
     app.listen(PORT, () => console.log(`Server running at: ${PORT}`));
   } catch (err) {
     console.log(err.message);
